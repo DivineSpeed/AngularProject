@@ -17,7 +17,6 @@ import { EmployesComponent } from './employes/employes.component';
 import { EmplistComponent } from './emplist/emplist.component';
 import { ProjlistComponent } from './projlist/projlist.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NavbarchefComponent } from './navbarchef/navbarchef.component';
 import { AddprojComponent } from './addproj/addproj.component';
 import { HomeComponent } from './home/home.component';
 import { AddEventComponent } from './add-event/add-event.component';
@@ -28,6 +27,8 @@ import { EmployeEventsComponent } from './employe-events/employe-events.componen
 import { NvchefComponent } from './nvchef/nvchef.component';
 import { EventchefComponent } from './eventchef/eventchef.component';
 import { HomechefComponent } from './homechef/homechef.component';
+import { HomeEmployeeComponent } from './home-employee/home-employee.component';
+import { NavbarEmployeeComponent } from './navbar-employee/navbar-employee.component';
 
 
 
@@ -47,7 +48,7 @@ import { HomechefComponent } from './homechef/homechef.component';
     EmplistComponent,
     ProjlistComponent,
     NavbarComponent,
-    NavbarchefComponent,
+   
     AddprojComponent,
     HomeComponent,
     AddEventComponent,
@@ -58,6 +59,8 @@ import { HomechefComponent } from './homechef/homechef.component';
     NvchefComponent,
     EventchefComponent,
     HomechefComponent,
+    HomeEmployeeComponent,
+    NavbarEmployeeComponent,
     
    
   ],

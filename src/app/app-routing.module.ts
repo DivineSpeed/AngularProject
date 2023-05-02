@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { EmployeEventsComponent } from './employe-events/employe-events.component';
 import { EventchefComponent } from './eventchef/eventchef.component';
 import { HomechefComponent } from './homechef/homechef.component';
+import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 const routes: Routes = [
   { path: 'HomePage/DetailsProjet/:projectId', component: DetailsProjetComponent },
   { path:'HomePage/:email', component: HomePageComponent },
@@ -40,7 +41,10 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path: 'editevent/:eventId',component:EditEventComponent},
   {path:'edit/:employeId', component: EditEmployeeComponent},
-  {path: 'addevent',component:AddEventComponent}
+  {path: 'addevent',component:AddEventComponent},
+  {path: 'logout',component:AuthentificationComponent},
+  { path:'homeemployee/:email', component: HomeEmployeeComponent }
+
   
 
 ];

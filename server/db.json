@@ -2,7 +2,7 @@
   "Employees": [
     {
       "id": 1,
-      "name": "Sarah Johnson",
+      "name": "Sarah ",
       "email": "sarah.johnson@example.com",
       "title": "chef de projet",
       "mobile": "555-1234",
@@ -85,7 +85,8 @@
       "projects": [
         6,
         5,
-        4
+        4,
+        7
       ]
     },
     {
@@ -218,6 +219,10 @@
         "Communicating with stakeholders and reporting progress"
       ],
       "desc": "Project Zeta involves developing a new software solution for a client. The team has completed the project plan and is currently working on the implementation phase. The project is progressing well, and the team is working closely with the client to ensure that the final product meets their requirements."
+    },
+    {
+      "proj_name": "mini projet",
+      "id": 7
     }
   ],
   "events": [
@@ -278,6 +283,12 @@
       "date": "2023-04-12",
       "speaker": "kjhgf",
       "id": 5
+    },
+    {
+      "topic": "ahmed",
+      "speaker": "hhhhhhhhhiuio",
+      "date": "2023-05-03",
+      "id": 6
     }
   ]
 }

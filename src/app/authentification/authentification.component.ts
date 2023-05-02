@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 
 export class AuthentificationComponent {
   public email!: string;
+  public pwd!: string;
   public employes:employetype[]=[];
   public errorMessage:string | null =null;
   public employe: employetype | undefined;
@@ -29,9 +30,9 @@ export class AuthentificationComponent {
 
   ngOnInit():void{ 
   }
-  public clickconnecter() {
-    if (this.email) {
-      this.employeesService.getEmployeeEmail(this.email).subscribe(data => {
+  public clickconnecter(email: string, pwd: string) {
+    if (email && pwd) {
+      this.employeesService.getEmployeeEmail(email).subscribe(data => {
         if (Array.isArray(data)) {
           this.employe = data[0];
         } else {
@@ -39,21 +40,26 @@ export class AuthentificationComponent {
         }
         console.log(this.employe?.title);
   
-        if (this.employe?.title === "rh") {
-          this.router.navigate(['./home' ]);
+        if (this.employe?.mdp === pwd) { // check if password matches
+          if (this.employe?.title === "rh") {
+            this.router.navigate(['./home']);
+          }
+          if (this.employe?.title === "employe") {
+            this.router.navigate(['./homeemployee/:email' + email]);
+          }
+          if (this.employe?.title === "chef de projet") {
+            this.router.navigate(['./ProjlistComponent/:email' + email]);
+          }
+        } else {
+          // handle incorrect password
+          alert('Incorrect password!');
         }
-        if (this.employe?.title === "employe") {
-          this.router.navigate(['./HomePage/:email' + this.email]);
-        }
-        if (this.employe?.title === "chef de projet") {
-          this.router.navigate(['./ProjlistComponent/:email' + this.email]);
-        }
-
       }, error => {
         this.errorMessage = error;
       });
     }
   }
+  
   
   
 }

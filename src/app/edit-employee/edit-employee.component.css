@@ -4,6 +4,7 @@ body{margin-top:20px;
     }
     .img-account-profile {
         height: 10rem;
+        width:15rem;
     }
     .rounded-circle {
         border-radius: 50% !important;
