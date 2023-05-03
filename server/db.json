@@ -11,8 +11,7 @@
       "projects": [
         1,
         2,
-        3,
-        7
+        3
       ]
     },
     {
@@ -39,9 +38,7 @@
       "photo": "https://images.unsplash.com/photo-1573497491765-dccce02b29df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       "mdp": "123",
       "projects": [
-        9,
         6,
-        8,
         5,
         3
       ]
@@ -57,7 +54,8 @@
       "projects": [
         6,
         5,
-        2
+        2,
+        7
       ]
     },
     {
@@ -69,7 +67,6 @@
       "photo": "https://images.unsplash.com/photo-1573165850883-9b0e18c44bd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
       "mdp": "123",
       "projects": [
-        9,
         5,
         4
       ]
@@ -85,8 +82,7 @@
       "projects": [
         6,
         5,
-        4,
-        7
+        4
       ]
     },
     {
@@ -99,8 +95,7 @@
       "mdp": "123",
       "projects": [
         1,
-        2,
-        8
+        2
       ]
     }
   ],
@@ -221,7 +216,17 @@
       "desc": "Project Zeta involves developing a new software solution for a client. The team has completed the project plan and is currently working on the implementation phase. The project is progressing well, and the team is working closely with the client to ensure that the final product meets their requirements."
     },
     {
-      "proj_name": "mini projet",
+      "proj_name": "E-Learning Platform Development",
+      "tasks": "Designing and implementing the platform's user interface,Developing a content management system,Creating a user authentication system",
+      "desc": "E-learning platform development involves creating a web-based platform that provides learners with access to educational materials and resources. The platform can be designed to support various types of learning, including self-paced learning, instructor-led learning, and blended learning.",
+      "progress": 30,
+      "team": [
+        4,
+        5,
+        6
+      ],
+      "status": "In Progress",
+      "start_date": "2022-12-09",
       "id": 7
     }
   ],

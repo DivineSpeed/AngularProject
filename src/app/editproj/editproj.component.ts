@@ -27,6 +27,7 @@ export class EditprojComponent {
    }
 
    ngOnInit() {
+    this.getAllEmployeesFromServer();
     this.activateRoute.paramMap.subscribe((params )=> {
       this.email=params.get('email');
       console.log("Hey 0 "+this.email);
