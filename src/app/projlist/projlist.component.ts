@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { employetype } from '../models/employetype';
 import { EmployeesService } from '../services/employees.service';
 import { projettype } from '../models/projettype';
@@ -22,10 +22,10 @@ export class ProjlistComponent implements OnInit{
   public photo : string | undefined ;
   public photos : string []=[];
   photosByProject: any;
-  
+  id :string | undefined;
 
 info:any;
-  constructor(private employeesService: EmployeesService, private projetService: ProjetService, private route: ActivatedRoute) { this.photo=undefined}
+  constructor(private employeesService: EmployeesService, private projetService: ProjetService, private route: ActivatedRoute, private router: Router) { this.photo=undefined}
 
   ngOnInit(): void {
     this.email = this.route.snapshot.paramMap.get('email');
@@ -96,7 +96,30 @@ for (let i = 0; i < this.projets.length; i++) {
     if (projetId) {
       this.projetService.deleteProject(projetId).subscribe(
         (data) => {
-          this.projetService.getAllProjects();
+          // Remove the project ID from the employee's projects array
+          const id = parseInt(projetId, 10);
+          if (this.employe && this.employe.id && this.employe.projects && this.employe.projects.indexOf(id) !== -1) {
+            const index = this.employe.projects.indexOf(id);
+            this.employe.projects.splice(index, 1);
+            this.id=this.employe.id.toString();
+  
+            // Update the employee using the employeesService
+            this.employeesService.updateEmploye(this.employe, this.id).subscribe({
+              next: (data: any) => {
+                console.log("Employee updated successfully:", data);
+              },
+              error: (error: any) => {
+                console.error("Error updating employee:", error);
+              }
+            });
+          }
+  
+          // Refresh the project list
+          this.router.navigate(['/ProjlistComponent/' + this.email]).then(() => {
+            // Do something after navigating
+          });
+  
+          // Do not navigate to another page
         },
         (error) => {
           this.errorMessage = error;
@@ -104,4 +127,5 @@ for (let i = 0; i < this.projets.length; i++) {
       );
     }
   }
+  
 }

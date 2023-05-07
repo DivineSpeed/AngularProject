@@ -48,7 +48,7 @@ export class AuthentificationComponent {
             this.router.navigate(['./homeemployee/:email' + email]);
           }
           if (this.employe?.title === "chef de projet") {
-            this.router.navigate(['./ProjlistComponent/:email' + email]);
+            this.router.navigate(['./homechef/:email' + email]);
           }
         } else {
           // handle incorrect password
